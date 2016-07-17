@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
-import tweepy, time, sys
+import tweepy, time, sys, os
+from logo_gen import gen_logo
+
 
 # enter the corresponding information from your Twitter application:
 CONSUMER_KEY = '***REMOVED***'
@@ -11,12 +13,13 @@ auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
 
-filename = 'tweet_test.txt'
-with open(filename, 'r') as fin:
-    data = fin.read().splitlines(True)
-    tweet_text = data[0]
-    
-with open(filename, 'w') as fout:
-    fout.writelines(data[1:])
+# DEV
+BOTDIR = os.getcwd() + '/'
 
-api.update_status(status=tweet_text.title())
+# PROD
+# BOTDIR = '/home/ianfitzpat/webapps/ianfitzpatrick_com/tplogobot/'
+
+
+logo = BOTDIR + gen_logo()
+api.update_with_media(logo)
+

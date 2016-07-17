@@ -19,7 +19,6 @@ api = tweepy.API(auth)
 # PROD
 BOTDIR = '/home/ianfitzpat/webapps/ianfitzpatrick_com/tplogobot/'
 
-
-logo = BOTDIR + gen_logo()
+logo = gen_logo(BOTDIR)
 api.update_with_media(logo)
 

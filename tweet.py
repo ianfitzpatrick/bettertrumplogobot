@@ -14,10 +14,10 @@ auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
 
 # DEV
-BOTDIR = os.getcwd() + '/'
+# BOTDIR = os.getcwd() + '/'
 
 # PROD
-# BOTDIR = '/home/ianfitzpat/webapps/ianfitzpatrick_com/tplogobot/'
+BOTDIR = '/home/ianfitzpat/webapps/ianfitzpatrick_com/tplogobot/'
 
 
 logo = BOTDIR + gen_logo()

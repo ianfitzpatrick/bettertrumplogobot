@@ -20,7 +20,7 @@ auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
 
-BOTDIR = sys.path[0]
+BOTDIR = sys.path[0] + '/'
 
 logo = gen_logo(BOTDIR)
 api.update_with_media(logo)
